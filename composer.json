@@ -1,0 +1,28 @@
+{
+    "name": "inetstudio/dummies",
+    "description": "Package for dummies",
+    "homepage": "https://github.com/inetstudio/dummies",
+    "license": "MIT",
+    "authors": [
+      {
+        "name": "Konstantin Bukin",
+        "email": "bukin@inetstudio.ru"
+      }
+    ],
+    "require": {
+      "inetstudio/admin-panel": "1.6.*"
+    },
+    "autoload": {
+      "psr-4": {
+        "InetStudio\\Dummies\\": "src/"
+      }
+    },
+    "extra": {
+      "laravel": {
+        "providers": [
+          "InetStudio\\Dummies\\Providers\\DummiesBindingsServiceProvider",
+          "InetStudio\\Dummies\\Providers\\DummiesServiceProvider"
+        ]
+      }
+    }
+}
