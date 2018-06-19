@@ -15,18 +15,16 @@ use InetStudio\Dummies\Contracts\Http\Requests\Back\SaveDummyRequestContract;
 class DummiesService implements DummiesServiceContract
 {
     /**
-     * @var DummiesRepositoryContract
+     * @var
      */
-    private $repository;
+    public $repository;
 
     /**
      * DummiesService constructor.
-     *
-     * @param DummiesRepositoryContract $repository
      */
-    public function __construct(DummiesRepositoryContract $repository)
+    public function __construct()
     {
-        $this->repository = $repository;
+        $this->repository = app()->make('InetStudio\Dummies\Contracts\Repositories\DummiesRepositoryContract');
     }
 
     /**

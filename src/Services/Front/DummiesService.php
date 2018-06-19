@@ -3,7 +3,6 @@
 namespace InetStudio\Dummies\Services\Front;
 
 use InetStudio\Dummies\Contracts\Services\Front\DummiesServiceContract;
-use InetStudio\Dummies\Contracts\Repositories\DummiesRepositoryContract;
 
 /**
  * Class DummiesService.
@@ -11,17 +10,15 @@ use InetStudio\Dummies\Contracts\Repositories\DummiesRepositoryContract;
 class DummiesService implements DummiesServiceContract
 {
     /**
-     * @var DummiesRepositoryContract
+     * @var
      */
-    private $repository;
+    public $repository;
 
     /**
      * DummiesService constructor.
-     *
-     * @param DummiesRepositoryContract $repository
      */
-    public function __construct(DummiesRepositoryContract $repository)
+    public function __construct()
     {
-        $this->repository = $repository;
+        $this->repository = app()->make('InetStudio\Dummies\Contracts\Repositories\DummiesRepositoryContract');
     }
 }
