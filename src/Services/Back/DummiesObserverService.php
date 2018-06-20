@@ -3,7 +3,6 @@
 namespace InetStudio\Dummies\Services\Back;
 
 use InetStudio\Dummies\Contracts\Models\DummyModelContract;
-use InetStudio\Dummies\Contracts\Repositories\DummiesRepositoryContract;
 use InetStudio\Dummies\Contracts\Services\Back\DummiesObserverServiceContract;
 
 /**
@@ -12,18 +11,16 @@ use InetStudio\Dummies\Contracts\Services\Back\DummiesObserverServiceContract;
 class DummiesObserverService implements DummiesObserverServiceContract
 {
     /**
-     * @var DummiesRepositoryContract
+     * @var
      */
-    private $repository;
+    public $repository;
 
     /**
      * DummiesService constructor.
-     *
-     * @param DummiesRepositoryContract $repository
      */
-    public function __construct(DummiesRepositoryContract $repository)
+    public function __construct()
     {
-        $this->repository = $repository;
+        $this->repository = app()->make('InetStudio\Dummies\Contracts\Repositories\DummiesRepositoryContract');
     }
 
     /**

@@ -15,7 +15,7 @@ class DummiesDataController extends Controller implements DummiesDataControllerC
      *
      * @var array
      */
-    private $services;
+    public $services;
 
     /**
      * DummiesController constructor.

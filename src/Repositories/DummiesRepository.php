@@ -14,7 +14,7 @@ class DummiesRepository implements DummiesRepositoryContract
     /**
      * @var DummyModelContract
      */
-    private $model;
+    public $model;
 
     /**
      * DummiesRepository constructor.
@@ -170,7 +170,7 @@ class DummiesRepository implements DummiesRepositoryContract
      *
      * @return Builder
      */
-    protected function getItemsQuery($extColumns = [], $with = []): Builder
+    public function getItemsQuery($extColumns = [], $with = []): Builder
     {
         $defaultColumns = ['id'];
 

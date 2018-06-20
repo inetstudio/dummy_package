@@ -5,7 +5,6 @@ namespace InetStudio\Dummies\Services\Back;
 use Yajra\DataTables\DataTables;
 use Yajra\DataTables\Html\Builder;
 use Yajra\DataTables\Services\DataTable;
-use InetStudio\Dummies\Contracts\Repositories\DummiesRepositoryContract;
 use InetStudio\Dummies\Contracts\Services\Back\DummiesDataTableServiceContract;
 
 /**
@@ -14,18 +13,16 @@ use InetStudio\Dummies\Contracts\Services\Back\DummiesDataTableServiceContract;
 class DummiesDataTableService extends DataTable implements DummiesDataTableServiceContract
 {
     /**
-     * @var DummiesRepositoryContract
+     * @var
      */
-    private $repository;
+    public $repository;
 
     /**
      * DummiesDataTableService constructor.
-     *
-     * @param DummiesRepositoryContract $repository
      */
-    public function __construct(DummiesRepositoryContract $repository)
+    public function __construct()
     {
-        $this->repository = $repository;
+        $this->repository = app()->make('InetStudio\Dummies\Contracts\Repositories\DummiesRepositoryContract');
     }
 
     /**

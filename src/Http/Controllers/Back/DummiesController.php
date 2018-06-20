@@ -125,7 +125,7 @@ class DummiesController extends Controller implements DummiesControllerContract
      *
      * @return SaveResponseContract
      */
-    private function save(SaveDummyRequestContract $request, int $id = 0): SaveResponseContract
+    public function save(SaveDummyRequestContract $request, int $id = 0): SaveResponseContract
     {
         $item = $this->services['dummies']->save($request, $id);
 
